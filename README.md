@@ -1,10 +1,17 @@
-# LoginRegisterApp
+# Angular Firebase Auth
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
 
-## Development server
+  This is an Angular application that provides user authentication functionalities such as signup, login, and logout using Firebase as the backend authentication service. The application also includes error handling for Firebase authentication and form validation. Token-based authentication is implemented using sessionStorage to store the token. Additionally, route guards using 'CanActivate' are implemented to protect certain routes, and the localId of the authenticated user is displayed in the dashboard.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
+
+1-Clone the repository to your local machine using 'git clone'.\
+2-Navigate to the project directory using the command line.\
+3-Run 'npm install' to install the dependencies.\
+4-Update the Firebase configuration in the 'environment.ts' file with your own Firebase project credentials.\
+5-Run 'ng serve' to start the development server.\
+6-Open your browser and navigate to 'http://localhost:4200/' to see the application in action.
 
 ## Code scaffolding
 
