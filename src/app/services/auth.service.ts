@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environment/environment';
 
 export interface AuthState {
   idToken: string;
@@ -26,7 +27,8 @@ export class AuthService {
 
   emailRegister(name: string, email: string, password: string) {
     return this.http.post<AuthState>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBdHeXDlImWJN3XtqxCn9YPa8qJXW5TchQ',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
+        environment.FIREBASE_KEY,
       {
         name,
         email,
@@ -38,7 +40,8 @@ export class AuthService {
 
   emailLogin(email: string, password: string) {
     return this.http.post<AuthState>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBdHeXDlImWJN3XtqxCn9YPa8qJXW5TchQ',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
+        environment.FIREBASE_KEY,
       {
         email,
         password,
@@ -49,7 +52,8 @@ export class AuthService {
 
   getDetails(token: string) {
     return this.http.post<any>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBdHeXDlImWJN3XtqxCn9YPa8qJXW5TchQ',
+      'https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=' +
+        environment.FIREBASE_KEY,
       {
         idToken: token,
       }
